@@ -1,16 +1,6 @@
 <?php 
     include __DIR__ .'/database.php';
-
-        foreach($database as $value); { 
 ?>
-            
-            <h2> 
-               <?php echo $value['year'] ?>     
-            </h2>
-            
-<?php }
-               
- ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,27 +11,47 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- GENERAL CONTAINER -->
     <div class="general-container d-flex flex-clmn">
+        <!-- HEADER -->
     <div class="header">
         <img class="logo-header" src="logo.png" alt="">
     </div>
+    <!-- MAIN -->
     <div class="main">
         <div class="container-main">
             <div class="container-album d-flex">
-                <div class="single-album">
+
+                <div class="single-album ">
+                    <?php foreach($database as $value) { ?>
                     <div class="album-cover d-flex">
-                        <img src="logo.png" alt="">
+                        <img src="<?php echo $value['poster'] ?>" alt="">
                     </div>
                     <div class="album-description">
+                        <p> 
+                            <?php echo $value['title'] ?>     
+                        </p>
+                        <p>
+                        <?php echo $value['author'] ?> 
+                        </p>
+                        <p>
+                        <?php echo $value['year'] ?> 
+                        </p>
+                        
+                        <p>
+                        <?php echo $value['genre'] ?> 
+                        </p>
+            
 
+                        <!-- PHP -->
+                        <?php }
+                
+                        ?>
+
+                        <!-- PHP -->
                     </div>
                 </div>
-                <div class="single-album">
-
-                </div>
-                <div class="single-album">
-
-                </div>
+                
             </div>
         </div>
     </div>
