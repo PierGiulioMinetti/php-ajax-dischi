@@ -15,7 +15,12 @@
         <div class="container-main">
             <div class="container-album d-flex">
                 <div class="single-album">
+                    <div class="album-cover d-flex">
+                        <img src="logo.png" alt="">
+                    </div>
+                    <div class="album-description">
 
+                    </div>
                 </div>
                 <div class="single-album">
 

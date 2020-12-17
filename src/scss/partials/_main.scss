@@ -9,10 +9,19 @@
     margin: auto;
     justify-content: space-between;
     margin-top: 100px;
-}
-
-.single-album{
-    width: calc(100% / 3 - 35px);
-    height: 300px;
-    background-color: black;
+    
+    .single-album{
+        width: calc(100% / 3 - 35px);
+        height: 300px;
+        background-color: black;
+        .album-cover{
+            height: 50%;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            >img{
+                max-width: 50%;
+            }
+        }
+    }
 }
