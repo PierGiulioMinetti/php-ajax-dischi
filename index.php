@@ -1,3 +1,17 @@
+<?php 
+    include __DIR__ .'/database.php';
+
+        foreach($database as $value); { 
+?>
+            
+            <h2> 
+               <?php echo $value['year'] ?>     
+            </h2>
+            
+<?php }
+               
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
