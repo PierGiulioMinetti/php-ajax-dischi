@@ -1,6 +1,4 @@
-<?php
-include __DIR__ . '/database.php';
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,25 +22,27 @@ include __DIR__ . '/database.php';
         <div class="main">
             <div class="container-main">
                 <div class="container-album d-flex">
-                    <?php foreach ($database as $value) { ?>
-                        <div class="single-album ">
+                    
+                        <div class="single-album"
+                            v-for="album in arrayDati"
+                        >
 
                             <div class="album-cover d-flex">
-                                <img src="<?php echo $value['poster'] ?>" alt="">
+                                <img v-bind:src="album.poster" alt="">
                             </div>
                             <div class="album-description">
                                 <p>
-                                    <?php echo $value['title'] ?>
+                                   {{album.title}}
                                 </p>
                                 <p>
-                                    <?php echo $value['author'] ?>
+                                    {{album.author}}
                                 </p>
                                 <p>
-                                    <?php echo $value['year'] ?>
+                                   {{album.year}}
                                 </p>
 
                                 <p>
-                                    <?php echo $value['genre'] ?>
+                                    {{album.genre}}
                                 </p>
 
 
@@ -52,7 +52,7 @@ include __DIR__ . '/database.php';
                             <!-- PHP -->
                             </div>
                         </div>
-                    <?php } ?>    
+                     
                 </div>
             </div>
         </div>
