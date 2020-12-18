@@ -4,16 +4,19 @@ import axios from 'axios';
 const app = new Vue ({ 
     el: '#app',
     data: {
-        test: 'sono un test',
+        arrayDati : [],
+
     },
     created(){
-        
 
-            // Make a request for a user with a given ID
-            axios.get('http://localhost/php-ajax-dischi/partial/db.php')
-            .then( response => {
-                // handle success
-                console.log(response.data);
+        
+        // Make a request for a user with a given ID
+        axios.get('http://localhost/php-ajax-dischi/partial/db.php')
+        .then( response => {
+            // handle success
+            console.log(response.data);
+            this.arrayDati = response.data;
+            console.log(this.arrayDati);
             })
             .catch( error => {
                 // handle error

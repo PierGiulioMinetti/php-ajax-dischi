@@ -17,7 +17,7 @@ include __DIR__ . '/database.php';
     <div id="app" class="general-container d-flex flex-clmn">
         <!-- HEADER -->
         <div class="header">
-            {{test}}
+            
             <img class="logo-header" src="logo.png" alt="">
         </div>
         <!-- MAIN -->
