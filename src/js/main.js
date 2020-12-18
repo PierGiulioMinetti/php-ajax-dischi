@@ -5,6 +5,7 @@ const app = new Vue ({
     el: '#app',
     data: {
         arrayDati : [],
+        valore: '', 
 
     },
     created(){
@@ -23,5 +24,11 @@ const app = new Vue ({
                 console.log(error);
             });
 
+    },
+
+    methods: {
+        cambia(){
+            // console.log(this.valore); //working
+        }
     }
 });

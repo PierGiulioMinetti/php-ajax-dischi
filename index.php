@@ -15,12 +15,15 @@
     <div id="app" class="general-container d-flex flex-clmn">
         <!-- HEADER -->
         <div class="header d-flex">   
-            <img class="logo-header" src="logo.png" alt="">
+            <img class="logo-header" src="logo.png" alt="logo-spotify">
              <div class="container-select">
                  <span>
                      select genre
                  </span>
-                 <select name="select" >
+                 <select name="select" 
+                        @change="cambia()"
+                        v-model="valore"
+                 >
                     <option 
                         v-for="album in arrayDati"
                         v-bind:value="album.genre">{{album.genre}}

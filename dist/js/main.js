@@ -14423,7 +14423,8 @@ __webpack_require__.r(__webpack_exports__);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
-    arrayDati: []
+    arrayDati: [],
+    valore: ''
   },
   created: function created() {
     var _this = this;
@@ -14438,6 +14439,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       // handle error
       console.log(error);
     });
+  },
+  methods: {
+    cambia: function cambia() {// console.log(this.valore); //working
+    }
   }
 });
 
