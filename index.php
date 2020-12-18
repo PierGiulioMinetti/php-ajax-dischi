@@ -14,9 +14,10 @@ include __DIR__ . '/database.php';
 
 <body>
     <!-- GENERAL CONTAINER -->
-    <div class="general-container d-flex flex-clmn">
+    <div id="app" class="general-container d-flex flex-clmn">
         <!-- HEADER -->
         <div class="header">
+            {{test}}
             <img class="logo-header" src="logo.png" alt="">
         </div>
         <!-- MAIN -->
@@ -56,6 +57,10 @@ include __DIR__ . '/database.php';
             </div>
         </div>
     </div>
+
+
+    <!-- js -->
+    <script src="dist/js/main.js"></script>
 </body>
 
 </html>
