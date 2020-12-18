@@ -14,9 +14,19 @@
     <!-- GENERAL CONTAINER -->
     <div id="app" class="general-container d-flex flex-clmn">
         <!-- HEADER -->
-        <div class="header">
-            
+        <div class="header d-flex">   
             <img class="logo-header" src="logo.png" alt="">
+             <div class="container-select">
+                 <span>
+                     select genre
+                 </span>
+                 <select name="select" >
+                    <option 
+                        v-for="album in arrayDati"
+                        v-bind:value="album.genre">{{album.genre}}
+                    </option>
+                 </select>
+             </div>
         </div>
         <!-- MAIN -->
         <div class="main">

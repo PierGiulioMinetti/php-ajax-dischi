@@ -14431,7 +14431,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     // Make a request for a user with a given ID
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost/php-ajax-dischi/partial/db.php').then(function (response) {
       // handle success
-      console.log(response.data);
+      console.log(response);
       _this.arrayDati = response.data;
       console.log(_this.arrayDati);
     })["catch"](function (error) {

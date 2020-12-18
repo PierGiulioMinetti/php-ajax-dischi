@@ -14,7 +14,7 @@ const app = new Vue ({
         axios.get('http://localhost/php-ajax-dischi/partial/db.php')
         .then( response => {
             // handle success
-            console.log(response.data);
+            console.log(response);
             this.arrayDati = response.data;
             console.log(this.arrayDati);
             })
