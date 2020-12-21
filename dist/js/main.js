@@ -14424,7 +14424,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
     arrayDati: [],
-    valore: ''
+    valore: 'all',
+    generi: []
   },
   created: function created() {
     var _this = this;
@@ -14432,16 +14433,36 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     // Make a request for a user with a given ID
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost/php-ajax-dischi/partial/db.php').then(function (response) {
       // handle success
-      console.log(response);
+      // console.log(response);
       _this.arrayDati = response.data;
-      console.log(_this.arrayDati);
+
+      _this.arrayDati.forEach(function (element) {
+        if (!_this.generi.includes(element.genre)) {
+          _this.generi.push(element.genre);
+        }
+      }); // console.log(this.arrayDati);
+
     })["catch"](function (error) {
       // handle error
       console.log(error);
     });
   },
   methods: {
-    cambia: function cambia() {// console.log(this.valore); //working
+    filtra: function filtra() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost/php-ajax-dischi/partial/filtered.php', {
+        params: {
+          'genre': this.valore
+        }
+      }).then(function (response) {
+        // handle success
+        // console.log(response);
+        _this2.arrayDati = response.data; // console.log(this.arrayDati);
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
     }
   }
 });

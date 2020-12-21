@@ -17,16 +17,19 @@
         <div class="header d-flex">   
             <img class="logo-header" src="logo.png" alt="logo-spotify">
              <div class="container-select">
+            
                  <span>
                      select genre
                  </span>
                  <select name="select" 
-                        @change="cambia()"
+                        @change="filtra()"
                         v-model="valore"
                  >
+
+                    <option value="all">all</option>
                     <option 
-                        v-for="album in arrayDati"
-                        v-bind:value="album.genre">{{album.genre}}
+                        v-for="genere in generi"
+                        v-bind:value="genere">{{genere}}
                     </option>
                  </select>
              </div>

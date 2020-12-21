@@ -4,9 +4,9 @@ import axios from 'axios';
 const app = new Vue ({ 
     el: '#app',
     data: {
-        arrayDati : [],
-        valore: '', 
-
+        arrayDati: [],
+        valore: 'all', 
+        generi: [],
     },
     created(){
 
@@ -15,9 +15,14 @@ const app = new Vue ({
         axios.get('http://localhost/php-ajax-dischi/partial/db.php')
         .then( response => {
             // handle success
-            console.log(response);
+            // console.log(response);
             this.arrayDati = response.data;
-            console.log(this.arrayDati);
+            this.arrayDati.forEach(element=>{
+                if(!this.generi.includes(element.genre)){
+                    this.generi.push(element.genre);
+                }
+            })
+            // console.log(this.arrayDati);
             })
             .catch( error => {
                 // handle error
@@ -27,8 +32,25 @@ const app = new Vue ({
     },
 
     methods: {
-        cambia(){
-            // console.log(this.valore); //working
+        filtra(){
+            axios.get('http://localhost/php-ajax-dischi/partial/filtered.php', {
+                params:{
+                    'genre' : this.valore
+                }
+            })
+            .then( response => {
+                // handle success
+                // console.log(response);
+                this.arrayDati = response.data;
+                // console.log(this.arrayDati);
+
+                })
+                .catch( error => {
+                    // handle error
+                    console.log(error);
+                });
+
+
         }
     }
 });
